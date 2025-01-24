@@ -54,6 +54,43 @@ modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
 
+//Modal popup logic for projects
+// project variables
+const projectssItem = document.querySelectorAll("[data-projects-item]");
+const modalProjectsContainer = document.querySelector("[data-modal-projects-container]");
+const modalProjectsCloseBtn = document.querySelector("[data-modal-projects-close-btn]");
+const projectsOverlay = document.querySelector("[data-projects-overlay]");
+
+// // modal variable
+// const modalImg = document.querySelector("[data-modal-img]");
+// const modalTitle = document.querySelector("[data-modal-title]");
+// const modalText = document.querySelector("[data-modal-text]");
+
+// modal toggle function
+const projectssModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// add click event to all modal items
+for (let i = 0; i < projectssItem.length; i++) {
+
+  projectssItem[i].addEventListener("click", function () {
+
+    // modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+    // modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    // modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    // modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    projectssModalFunc();
+
+  });
+
+}
+
+// add click event to modal close button
+modalProjectsCloseBtn.addEventListener("click", projectssModalFunc);
+projectsOverlay.addEventListener("click", projectssModalFunc);
 
 // custom select variables
 const select = document.querySelector("[data-select]");
